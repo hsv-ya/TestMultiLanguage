@@ -1,0 +1,4 @@
+﻿lblFeedRateG0 = Seyir hızı G0
+chkStartZ = Z ile başlayanları kullan
+grb = G'yi seçin?
+btnSave = Kaydetmek

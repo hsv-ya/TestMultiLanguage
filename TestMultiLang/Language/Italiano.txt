@@ -1,0 +1,4 @@
+﻿lblFeedRateG0 = Velocità di marcia G0
+chkStartZ = usa la Z iniziale
+grb = Seleziona G?
+btnSave = Salva

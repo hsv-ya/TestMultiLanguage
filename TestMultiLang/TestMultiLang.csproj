@@ -55,6 +55,9 @@
     <Folder Include="Language" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Language\China.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Language\English.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,4 +1,5 @@
-﻿lblFeedRateG0 = Feed rate G0
+﻿English
+lblFeedRateG0 = Feed rate G0
 chkStartZ = use Start Z
 grb = Select G?
 btnSave = Save

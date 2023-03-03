@@ -38,13 +38,13 @@ namespace TestMultiLang
 		{
 			this.lblFeedRateG0 = new System.Windows.Forms.Label();
 			this.textFeedRateG0 = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
 			this.cmbLanguage = new System.Windows.Forms.ComboBox();
 			this.chkStartZ = new System.Windows.Forms.CheckBox();
 			this.rbtG0 = new System.Windows.Forms.RadioButton();
 			this.rbtG1 = new System.Windows.Forms.RadioButton();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.grb = new System.Windows.Forms.GroupBox();
+			this.lblLanguage = new System.Windows.Forms.Label();
 			this.grb.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -63,16 +63,8 @@ namespace TestMultiLang
 			this.textFeedRateG0.Name = "textFeedRateG0";
 			this.textFeedRateG0.Size = new System.Drawing.Size(100, 20);
 			this.textFeedRateG0.TabIndex = 1;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(408, 39);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
+			this.textFeedRateG0.Text = "80%";
+			this.textFeedRateG0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// cmbLanguage
 			// 
@@ -82,7 +74,7 @@ namespace TestMultiLang
 			this.cmbLanguage.Name = "cmbLanguage";
 			this.cmbLanguage.Size = new System.Drawing.Size(121, 21);
 			this.cmbLanguage.TabIndex = 3;
-			this.cmbLanguage.SelectedValueChanged += new System.EventHandler(this.Button1Click);
+			this.cmbLanguage.SelectedValueChanged += new System.EventHandler(this.CmbLanguageSelectedValueChanged);
 			// 
 			// chkStartZ
 			// 
@@ -136,32 +128,42 @@ namespace TestMultiLang
 			this.grb.TabStop = false;
 			this.grb.Text = "Select G?";
 			// 
+			// lblLanguage
+			// 
+			this.lblLanguage.AutoSize = true;
+			this.lblLanguage.Location = new System.Drawing.Point(204, 23);
+			this.lblLanguage.Name = "lblLanguage";
+			this.lblLanguage.Size = new System.Drawing.Size(55, 13);
+			this.lblLanguage.TabIndex = 9;
+			this.lblLanguage.Text = "Language";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(515, 269);
+			this.Controls.Add(this.lblLanguage);
 			this.Controls.Add(this.grb);
 			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.chkStartZ);
 			this.Controls.Add(this.cmbLanguage);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textFeedRateG0);
 			this.Controls.Add(this.lblFeedRateG0);
 			this.Name = "MainForm";
 			this.Text = "TestMultiLang";
+			this.Shown += new System.EventHandler(this.MainFormShown);
 			this.grb.ResumeLayout(false);
 			this.grb.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label lblLanguage;
 		private System.Windows.Forms.GroupBox grb;
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.RadioButton rbtG1;
 		private System.Windows.Forms.RadioButton rbtG0;
 		private System.Windows.Forms.CheckBox chkStartZ;
 		private System.Windows.Forms.ComboBox cmbLanguage;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox textFeedRateG0;
 		private System.Windows.Forms.Label lblFeedRateG0;
 	}

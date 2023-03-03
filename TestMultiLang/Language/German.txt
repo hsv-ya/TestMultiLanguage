@@ -1,4 +1,5 @@
-﻿lblFeedRateG0 = Fahrgeschwindigkeit G0
+﻿German
+lblFeedRateG0 = Fahrgeschwindigkeit G0
 chkStartZ = Verwenden Sie beginnend Z
 grb = Wählen Sie G?
 btnSave = Speichern

@@ -1,0 +1,5 @@
+﻿中國
+lblFeedRateG0 = 進給速度 G0
+chkStartZ = 使用開始 Z
+grb = 選擇 G?
+btnSave = 保存存檔

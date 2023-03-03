@@ -3,7 +3,7 @@
  * User: OpenCNC
  * Date: 22.02.2023
  * Time: 11:05
- * 
+ *
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
@@ -16,39 +16,50 @@ namespace TestMultiLang {
 
 public partial class MainForm : Form {
 	Dictionary<string, string> translation = new Dictionary<string, string>();
-	
+
 	public MainForm() {
 		InitializeComponent();
-		
-		// TODO: Add constructor code after the InitializeComponent() call.
-		//comboBox1.SelectedIndex = 0;
-		string[] files_lang = Directory.GetFiles("Language/", "*.txt");
+
+		string[] files_lang;
+
+		try {
+			files_lang = Directory.GetFiles("Language/", "*.txt");
+		} catch {
+			lblLanguage.Visible = false;
+			cmbLanguage.Visible = false;
+			return;
+		}
+
 		string lang = "";
 		string s = "";
 		string[] ss;
-		
+
 		TextReader textFile;
-		
+
 		for (int i = 0; i < files_lang.Length; i++) {
-			lang = files_lang[i].Substring(9);
-			lang = lang.Substring(0, lang.Length - 4);
-			
 			textFile = File.OpenText(files_lang[i]);
-			
+
+			lang = textFile.ReadLine();
+
 			while ((s = textFile.ReadLine()) != null) {
 				if (s.Length == 0)
 					continue;
 				ss = s.Split('=');
 				translation.Add(lang + "|" + ss[0].Trim(), ss[1].Trim());
 			}
-			
+
 			textFile.Close();
-			
+
 			cmbLanguage.Items.Add(lang);
 		}
 	}
-	
-	void Button1Click(object sender, EventArgs e) {
+
+	void MainFormShown(object sender, EventArgs e) {
+		if (cmbLanguage.Items.Count == 1)
+			cmbLanguage.SelectedIndex = 0;
+	}
+
+	void CmbLanguageSelectedValueChanged(object sender, EventArgs e) {
 		if (cmbLanguage.SelectedIndex < 0)
 			return;
 		string lang = cmbLanguage.Text;

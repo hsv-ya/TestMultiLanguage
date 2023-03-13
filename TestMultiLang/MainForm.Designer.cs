@@ -45,6 +45,7 @@ namespace TestMultiLang
 			this.btnSave = new System.Windows.Forms.Button();
 			this.grb = new System.Windows.Forms.GroupBox();
 			this.lblLanguage = new System.Windows.Forms.Label();
+			this.btnShowForm2 = new System.Windows.Forms.Button();
 			this.grb.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -137,11 +138,22 @@ namespace TestMultiLang
 			this.lblLanguage.TabIndex = 9;
 			this.lblLanguage.Text = "Language";
 			// 
+			// btnShowForm2
+			// 
+			this.btnShowForm2.Location = new System.Drawing.Point(134, 204);
+			this.btnShowForm2.Name = "btnShowForm2";
+			this.btnShowForm2.Size = new System.Drawing.Size(112, 35);
+			this.btnShowForm2.TabIndex = 10;
+			this.btnShowForm2.Text = "Show Form2";
+			this.btnShowForm2.UseVisualStyleBackColor = true;
+			this.btnShowForm2.Click += new System.EventHandler(this.BtnShowForm2Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(515, 269);
+			this.Controls.Add(this.btnShowForm2);
 			this.Controls.Add(this.lblLanguage);
 			this.Controls.Add(this.grb);
 			this.Controls.Add(this.btnSave);
@@ -157,6 +169,7 @@ namespace TestMultiLang
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnShowForm2;
 		private System.Windows.Forms.Label lblLanguage;
 		private System.Windows.Forms.GroupBox grb;
 		private System.Windows.Forms.Button btnSave;

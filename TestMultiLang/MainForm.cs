@@ -69,6 +69,11 @@ public partial class MainForm : Form {
 	void CmbLanguageSelectedValueChanged(object sender, EventArgs e) {
 		if (cmbLanguage.SelectedIndex < 0)
 			return;
+
+		cmbLanguageChange(this);
+	}
+
+	void cmbLanguageChange(Form form) {
 		string lang = cmbLanguage.Text;
 		string[] ss;
 		Label formLabel;
@@ -80,25 +85,31 @@ public partial class MainForm : Form {
 			ss = item.Key.Split('|');
 			if (lang.CompareTo(ss[0]) != 0)
 				continue;
-			if (Controls.ContainsKey(ss[1])) {
+			if (form.Controls.ContainsKey(ss[1])) {
 				if (ss[1].Substring(0,3) == "lbl") {
-					formLabel = (Label)Controls[ss[1]];
+					formLabel = (Label)form.Controls[ss[1]];
 					formLabel.Text = item.Value;
 				} else if (ss[1].Substring(0,3) == "rbt") {
-					formRadioButton = (RadioButton)Controls[ss[1]];
+					formRadioButton = (RadioButton)form.Controls[ss[1]];
 					formRadioButton.Text = item.Value;
 				} else if (ss[1].Substring(0,3) == "chk") {
-					formCheckBox = (CheckBox)Controls[ss[1]];
+					formCheckBox = (CheckBox)form.Controls[ss[1]];
 					formCheckBox.Text = item.Value;
 				} else if (ss[1].Substring(0,3) == "btn") {
-					formButton = (Button)Controls[ss[1]];
+					formButton = (Button)form.Controls[ss[1]];
 					formButton.Text = item.Value;
 				} else if (ss[1].Substring(0,3) == "grb") {
-					formGroupBox = (GroupBox)Controls[ss[1]];
+					formGroupBox = (GroupBox)form.Controls[ss[1]];
 					formGroupBox.Text = item.Value;
 				}
 			}
 		}
+	}
+
+	void BtnShowForm2Click(object sender, EventArgs e) {
+		Form2 form2 = new Form2();
+		cmbLanguageChange(form2);
+		form2.ShowDialog();
 	}
 }
 

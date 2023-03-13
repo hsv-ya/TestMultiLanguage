@@ -55,8 +55,11 @@ public partial class MainForm : Form {
 	}
 
 	void MainFormShown(object sender, EventArgs e) {
-		if (cmbLanguage.Items.Count == 1)
+		if (cmbLanguage.Items.Count == 1) {
 			cmbLanguage.SelectedIndex = 0;
+			lblLanguage.Visible = false;
+			cmbLanguage.Visible = false;
+		}
 	}
 
 	void CmbLanguageSelectedValueChanged(object sender, EventArgs e) {

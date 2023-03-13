@@ -8,7 +8,7 @@
  */
 namespace TestMultiLang
 {
-	partial class Form2
+	partial class frmForm2
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -48,14 +48,14 @@ namespace TestMultiLang
 			this.lblForTest.TabIndex = 0;
 			this.lblForTest.Text = "Test";
 			// 
-			// Form2
+			// frmForm2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
 			this.Controls.Add(this.lblForTest);
-			this.Name = "Form2";
-			this.Text = "Form2";
+			this.Name = "frmForm2";
+			this.Text = "Form for test";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

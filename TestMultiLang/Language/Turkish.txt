@@ -1,4 +1,6 @@
 ﻿Turkish
+frmMainForm = Çoklu Dil Testi
+frmForm2 = Test formu
 lblFeedRateG0 = Seyir hızı G0
 chkStartZ = Z ile başlayanları kullan
 grb = G'yi seçin?

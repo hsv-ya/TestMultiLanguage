@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace TestMultiLang {
 
-public partial class MainForm : Form {
+public partial class frmMainForm : Form {
 	Dictionary<string, string> translation = new Dictionary<string, string>();
 
-	public MainForm() {
+	public frmMainForm() {
 		InitializeComponent();
 
 		loadLanguage();
@@ -36,7 +36,7 @@ public partial class MainForm : Form {
 
 		string lang = "";
 		string s = "";
-		string[] ss;
+		string[] ss = {"", ""};
 
 		TextReader textFile;
 
@@ -48,8 +48,11 @@ public partial class MainForm : Form {
 			while ((s = textFile.ReadLine()) != null) {
 				if (s.Length == 0)
 					continue;
-				ss = s.Split('=');
-				translation.Add(lang + "|" + ss[0].Trim(), ss[1].Trim());
+				if (s.IndexOf('=') == -1)
+					continue;
+				ss[0] = s.Substring(0, s.IndexOf('=')).Trim();
+				ss[1] = s.Substring(s.IndexOf('=') + 1).Trim();
+				translation.Add(lang + "|" + ss[0], ss[1]);
 			}
 
 			textFile.Close();
@@ -83,31 +86,34 @@ public partial class MainForm : Form {
 		GroupBox formGroupBox;
 		foreach (KeyValuePair<string,string> item in translation) {
 			ss = item.Key.Split('|');
-			if (lang.CompareTo(ss[0]) != 0)
+			if (!lang.Equals(ss[0]))
 				continue;
 			if (form.Controls.ContainsKey(ss[1])) {
-				if (ss[1].Substring(0,3) == "lbl") {
+				if (ss[1].Substring(0,3).Equals("lbl")) {
 					formLabel = (Label)form.Controls[ss[1]];
 					formLabel.Text = item.Value;
-				} else if (ss[1].Substring(0,3) == "rbt") {
+				} else if (ss[1].Substring(0,3).Equals("rbt")) {
 					formRadioButton = (RadioButton)form.Controls[ss[1]];
 					formRadioButton.Text = item.Value;
-				} else if (ss[1].Substring(0,3) == "chk") {
+				} else if (ss[1].Substring(0,3).Equals("chk")) {
 					formCheckBox = (CheckBox)form.Controls[ss[1]];
 					formCheckBox.Text = item.Value;
-				} else if (ss[1].Substring(0,3) == "btn") {
+				} else if (ss[1].Substring(0,3).Equals("btn")) {
 					formButton = (Button)form.Controls[ss[1]];
 					formButton.Text = item.Value;
-				} else if (ss[1].Substring(0,3) == "grb") {
+				} else if (ss[1].Substring(0,3).Equals("grb")) {
 					formGroupBox = (GroupBox)form.Controls[ss[1]];
 					formGroupBox.Text = item.Value;
 				}
+			} else if (ss[1].Substring(0,3).Equals("frm")) {
+				if (form.Name.Equals(ss[1]))
+					form.Text = item.Value;
 			}
 		}
 	}
 
 	void BtnShowForm2Click(object sender, EventArgs e) {
-		Form2 form2 = new Form2();
+		frmForm2 form2 = new frmForm2();
 		cmbLanguageChange(form2);
 		form2.ShowDialog();
 	}

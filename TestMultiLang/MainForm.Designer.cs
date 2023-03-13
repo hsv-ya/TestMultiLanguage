@@ -8,7 +8,7 @@
  */
 namespace TestMultiLang
 {
-	partial class MainForm
+	partial class frmMainForm
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -148,7 +148,7 @@ namespace TestMultiLang
 			this.btnShowForm2.UseVisualStyleBackColor = true;
 			this.btnShowForm2.Click += new System.EventHandler(this.BtnShowForm2Click);
 			// 
-			// MainForm
+			// frmMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,8 +161,8 @@ namespace TestMultiLang
 			this.Controls.Add(this.cmbLanguage);
 			this.Controls.Add(this.textFeedRateG0);
 			this.Controls.Add(this.lblFeedRateG0);
-			this.Name = "MainForm";
-			this.Text = "TestMultiLang";
+			this.Name = "frmMainForm";
+			this.Text = "Test Multi-Language";
 			this.Shown += new System.EventHandler(this.MainFormShown);
 			this.grb.ResumeLayout(false);
 			this.grb.PerformLayout();

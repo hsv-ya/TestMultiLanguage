@@ -1,4 +1,6 @@
 ﻿German
+frmMainForm = Testen Sie Mehrsprachigkeit
+frmForm2 = Formular zum Testen
 lblFeedRateG0 = Fahrgeschwindigkeit G0
 chkStartZ = Verwenden Sie beginnend Z
 grb = Wählen Sie G?

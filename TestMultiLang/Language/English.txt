@@ -1,4 +1,6 @@
 ﻿English
+frmMainForm = Test Multi-Language
+frmForm2 = Form for test
 lblFeedRateG0 = Feed rate G0
 chkStartZ = use Start Z
 grb = Select G?

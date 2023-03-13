@@ -1,4 +1,6 @@
 ﻿中國
+frmMainForm = 测试多国语言
+frmForm2 = 测试表格
 lblFeedRateG0 = 進給速度 G0
 chkStartZ = 使用開始 Z
 grb = 選擇 G?

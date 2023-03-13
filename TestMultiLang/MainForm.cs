@@ -20,6 +20,10 @@ public partial class MainForm : Form {
 	public MainForm() {
 		InitializeComponent();
 
+		loadLanguage();
+	}
+
+	void loadLanguage() {
 		string[] files_lang;
 
 		try {

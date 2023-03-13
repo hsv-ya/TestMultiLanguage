@@ -6,3 +6,4 @@ chkStartZ = Verwenden Sie beginnend Z
 grb = Wählen Sie G?
 btnSave = Speichern
 lblForTest = Prüfen
+ShowForm2 = Form2 anzeigen

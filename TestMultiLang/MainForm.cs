@@ -79,36 +79,14 @@ public partial class frmMainForm : Form {
 	void cmbLanguageChange(Form form) {
 		string lang = cmbLanguage.Text;
 		string[] ss;
-		Label formLabel;
-		Button formButton;
-		CheckBox formCheckBox;
-		RadioButton formRadioButton;
-		GroupBox formGroupBox;
 		foreach (KeyValuePair<string,string> item in translation) {
 			ss = item.Key.Split('|');
 			if (!lang.Equals(ss[0]))
 				continue;
-			if (form.Controls.ContainsKey(ss[1])) {
-				if (ss[1].Substring(0,3).Equals("lbl")) {
-					formLabel = (Label)form.Controls[ss[1]];
-					formLabel.Text = item.Value;
-				} else if (ss[1].Substring(0,3).Equals("rbt")) {
-					formRadioButton = (RadioButton)form.Controls[ss[1]];
-					formRadioButton.Text = item.Value;
-				} else if (ss[1].Substring(0,3).Equals("chk")) {
-					formCheckBox = (CheckBox)form.Controls[ss[1]];
-					formCheckBox.Text = item.Value;
-				} else if (ss[1].Substring(0,3).Equals("btn")) {
-					formButton = (Button)form.Controls[ss[1]];
-					formButton.Text = item.Value;
-				} else if (ss[1].Substring(0,3).Equals("grb")) {
-					formGroupBox = (GroupBox)form.Controls[ss[1]];
-					formGroupBox.Text = item.Value;
-				}
-			} else if (ss[1].Substring(0,3).Equals("frm")) {
-				if (form.Name.Equals(ss[1]))
-					form.Text = item.Value;
-			}
+			if (form.Controls.ContainsKey(ss[1]))
+				form.Controls[ss[1]].Text = item.Value;
+			else if (form.Name.Equals(ss[1]))
+				form.Text = item.Value;
 		}
 	}
 

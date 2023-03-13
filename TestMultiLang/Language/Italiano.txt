@@ -6,3 +6,4 @@ chkStartZ = usa la Z iniziale
 grb = Seleziona G?
 btnSave = Salva
 lblForTest = Test
+ShowForm2 = Mostra Modulo2

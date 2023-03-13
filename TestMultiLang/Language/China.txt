@@ -6,3 +6,4 @@ chkStartZ = 使用開始 Z
 grb = 選擇 G?
 btnSave = 保存存檔
 lblForTest = 測試
+ShowForm2 = 显示表格 2

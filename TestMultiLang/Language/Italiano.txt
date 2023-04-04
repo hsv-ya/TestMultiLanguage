@@ -7,3 +7,5 @@ grb = Seleziona G?
 btnSave = Salva
 lblForTest = Test
 ShowForm2 = Mostra Modulo2
+rbtG0 = G00
+rbtG1 = G01

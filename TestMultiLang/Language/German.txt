@@ -7,3 +7,5 @@ grb = Wählen Sie G?
 btnSave = Speichern
 lblForTest = Prüfen
 ShowForm2 = Form2 anzeigen
+rbtG0 = G00
+rbtG1 = G01

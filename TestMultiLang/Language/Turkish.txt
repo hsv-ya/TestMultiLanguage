@@ -7,3 +7,5 @@ grb = G'yi seçin?
 btnSave = Kaydetmek
 lblForTest = Ölçek
 ShowForm2 = Form2'yi Göster
+rbtG0 = G00
+rbtG1 = G01

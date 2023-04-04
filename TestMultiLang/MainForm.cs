@@ -76,6 +76,21 @@ public partial class frmMainForm : Form {
 		cmbLanguageChange(this);
 	}
 
+	string replaceControlCharacter(string s) {
+		return s.Replace("\\n", "\n");
+	}
+
+	void checkControls(string controlName, string controlText, Control.ControlCollection controls) {
+		if (controls.Count == 0)
+			return;
+		for (int i = 0; i < controls.Count; i++)
+			if (controls[i].Controls.ContainsKey(controlName)) {
+			controls[i].Controls[controlName].Text = replaceControlCharacter(controlText);
+				break;
+			} else
+				checkControls(controlName, controlText, controls[i].Controls);
+	}
+
 	void cmbLanguageChange(Form form) {
 		string lang = cmbLanguage.Text;
 		string[] ss;
@@ -83,10 +98,12 @@ public partial class frmMainForm : Form {
 			ss = item.Key.Split('|');
 			if (!lang.Equals(ss[0]))
 				continue;
-			if (form.Controls.ContainsKey(ss[1]))
-				form.Controls[ss[1]].Text = item.Value;
-			else if (form.Name.Equals(ss[1]))
+			if (form.Name.Equals(ss[1]))
 				form.Text = item.Value;
+			else if (form.Controls.ContainsKey(ss[1]))
+				form.Controls[ss[1]].Text = replaceControlCharacter(item.Value);
+			else
+				checkControls(ss[1], item.Value, form.Controls);
 		}
 	}
 

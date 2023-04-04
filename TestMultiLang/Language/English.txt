@@ -7,3 +7,5 @@ grb = Select G?
 btnSave = Save
 lblForTest = Test
 ShowForm2 = Show Form2
+rbtG0 = G00
+rbtG1 = G01
